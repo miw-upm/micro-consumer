@@ -1,9 +1,8 @@
 services:
-  kafka:
+  kafka-server:
     image: bitnami/kafka:latest
-    container_name: kafka
-    networks:
-      - miw
+    container_name: kafka-server
+    restart: always
     ports:
       - "9092:9092"
     environment:
@@ -15,6 +14,8 @@ services:
       KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "LOCAL:PLAINTEXT,DOCKER:PLAINTEXT,CONTROLLER:PLAINTEXT"
       KAFKA_CFG_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
       KAFKA_CFG_INTER_BROKER_LISTENER_NAME: "DOCKER"
+    networks:
+      - miw
 
 networks:
   miw:

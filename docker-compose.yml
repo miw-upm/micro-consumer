@@ -1,7 +1,8 @@
 services:
-  app:
+  consumer-api-server:
     build: .
-    container_name: consumer-api
+    image: consumer-api:v1
+    container_name: consumer-api-server
     restart: always
     ports:
       - "8083:8083"
