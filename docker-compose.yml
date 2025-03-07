@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: consumer-api
+    restart: always
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP-SERVERS: kafka:9094
+    networks:
+      - miw
+
+networks:
+  miw:
+    external: true
+
+#> docker compose up --build -d
