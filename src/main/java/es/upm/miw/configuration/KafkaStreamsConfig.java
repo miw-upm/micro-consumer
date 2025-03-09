@@ -1,6 +1,6 @@
 package es.upm.miw.configuration;
 
-import es.upm.miw.OrderConsumerService;
+import es.upm.miw.services.OrderConsumerService;
 import lombok.extern.log4j.Log4j2;
 import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
@@ -14,12 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import java.util.Collections;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
+@Profile("!test")
 @Log4j2
 @Configuration
 public class KafkaStreamsConfig {

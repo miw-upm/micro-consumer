@@ -1,4 +1,4 @@
-package es.upm.miw.rest.exceptionshandler;
+package es.upm.miw.resources.exceptionshandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -19,7 +19,7 @@ public class ApiExceptionHandler {
     })
     @ResponseBody
     public ErrorMessage noResourceFoundRequest(Exception exception) {
-        return new ErrorMessage(exception,HttpStatus.NOT_FOUND.value());
+        return new ErrorMessage(exception, HttpStatus.NOT_FOUND.value());
     }
 
     @ResponseStatus(HttpStatus.BAD_GATEWAY)

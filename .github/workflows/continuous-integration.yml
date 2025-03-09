@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [develop]
+    branches: [develop,release-*]
 
 jobs:
   devops:
@@ -19,3 +19,11 @@ jobs:
           distribution: zulu
           java-version: 21
           cache: maven
+
+      - name: Build & Unit & IT & FT & Sonar Analysis
+        run: >
+          mvn -B clean verify sonar:sonar 
+          -Dsonar.projectKey=es.upm.miw:iwvg-devops 
+          -Dsonar.organization=miw-upm-github 
+          -Dsonar.host.url=https://sonarcloud.io 
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }}

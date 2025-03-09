@@ -13,7 +13,7 @@
     </parent>
 
     <groupId>es.upm.miw</groupId>
-    <artifactId>consumer-api</artifactId>
+    <artifactId>micro-consumer</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.groupId}.${project.artifactId}</name>

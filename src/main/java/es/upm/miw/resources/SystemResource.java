@@ -1,4 +1,4 @@
-package es.upm.miw.rest;
+package es.upm.miw.resources;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

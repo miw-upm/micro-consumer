@@ -1,6 +1,10 @@
 spring:
+  application:
+    name: micro-order-api
   profiles:
+    # Profile ---------------------------------
     active: dev
+  # -----------------------------------------
   output:
     ansi:
       enabled: ALWAYS
@@ -8,10 +12,11 @@ spring:
     type: none
   jackson:
     default-property-inclusion: NON_NULL
+
   kafka:
     bootstrap-servers: localhost:9092
     streams:
-      application-id: consumer-app
+      application-id: micro-order-api
 
 
 info:

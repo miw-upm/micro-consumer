@@ -1,4 +1,4 @@
-package es.upm.miw.rest.exceptionshandler;
+package es.upm.miw.resources.exceptionshandler;
 
 public class NotFoundException extends RuntimeException {
     private static final String DESCRIPTION = "Not Found Exception";
