@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [develop,release-*]
+    branches: [master,develop,release-*]
 
 jobs:
   devops:
@@ -26,5 +26,4 @@ jobs:
           -Dsonar.projectKey=es.upm.miw:micro-consumer
           -Dsonar.organization=miw-upm-github 
           -Dsonar.host.url=https://sonarcloud.io 
-          -Dsonar.branch.name=develop
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
